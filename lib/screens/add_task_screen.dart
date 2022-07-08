@@ -14,6 +14,7 @@ class AddTaskScreen extends StatelessWidget {
           borderRadius: BorderRadius.only(
             topLeft: Radius.circular(20.0),
             topRight: Radius.circular(20.0),
+
           ),
         ),
         child: Column(
