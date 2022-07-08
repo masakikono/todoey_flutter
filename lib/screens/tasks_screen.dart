@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:todoey_flutter/widgets/tasks_list.dart';
-import 'package:todoey_flutter/screens/add_task_screen.dart';
-
-
 
 class TasksScreen extends StatelessWidget {
+  const TasksScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.lightBlueAccent,
       floatingActionButton: FloatingActionButton(
+        onPressed: null,
         backgroundColor: Colors.lightBlueAccent,
         child: Icon(Icons.add),
-        onPressed: () {
-          showModalBottomSheet(context: context, builder: (context) => AddTaskScreen());
-        },
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -76,7 +71,34 @@ class TasksScreen extends StatelessWidget {
   }
 }
 
+class TasksList extends StatelessWidget {
+  const TasksList({
+    Key? key,
+  }) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return ListView(
+      children: <Widget>[
+        TaskTile(),
+        TaskTile(),
+        TaskTile(),
+      ],
+    );
+  }
+}
 
+class TaskTile extends StatelessWidget {
+  const TaskTile({
+    Key? key,
+  }) : super(key: key);
 
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      title: Text('this is a task'),
+      trailing: Checkbox(onChanged: null ,value: false),
+    );
+  }
+}
 
