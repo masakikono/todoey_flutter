@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:todoey_flutter/models/task.dart';
 
 class TaskTile extends StatelessWidget {
-  final bool isChecked = false;
+  final bool isChecked;
+  final String taskTitle;
+
+  TaskTile({required this.isChecked, required this.taskTitle});
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
       title: Text(
-        'this is a task',
+        taskTitle,
         style: TextStyle(
             decoration: isChecked ? TextDecoration.lineThrough : null),
       ),
@@ -33,5 +37,7 @@ class TaskCheckBox extends StatelessWidget {
   TaskCheckBox(this.checkboxState, this.toggleCheckboxState);
 
   @override
-  Widget build(BuildContext context) {}
+  Widget build(BuildContext context) {
+    return Text('fuga');
+  }
 }
